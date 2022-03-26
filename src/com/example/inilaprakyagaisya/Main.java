@@ -1,14 +1,15 @@
 package com.example.inilaprakyagaisya;
-
-import java.util.Scanner;
+import java.sql.SQLOutput;
+import java.util.*;
+import com.example.inilaprakyagaisya.Features;
 
 public class Main {
 
     public static void main(String[] args) {
-	int input, jenisPinjaman;
-    float hutang, angsuran, deposit, total = 0;
-    Scanner sc = new Scanner(System.in);
-    Features object = new Features();
+        int input, jenisPinjaman, tahun;
+        float hutang, angsuran, deposit, total = 0;
+        Scanner sc = new Scanner(System.in);
+        Features object = new Features();
 
 
         while (true) {
@@ -30,19 +31,16 @@ public class Main {
                 System.out.println("Sisa hutang anda sekarang " + hutang);
 
             } else if (input == 3) {
-
+                System.out.println("Kalkulator Keuntungan Test");
                 System.out.print("Masukkan jumlah deposit: ");
                 deposit = sc.nextFloat();
+                System.out.print("Masukkan lama tahun: ");
+                tahun = sc.nextInt();
 
-                total += object.deposit(deposit);
+                System.out.println("Deposit setelah " + tahun + " tahun adalah: IDR " + object.kalkulasikeuntunganDeposit(deposit, tahun));
 
-                System.out.println(total);
 
             }
-            else {
-                System.exit(0);
-            }
-
         }
     }
 }
